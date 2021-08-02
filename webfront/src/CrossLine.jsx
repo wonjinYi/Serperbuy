@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { Input, Button } from 'antd';
+import { Input, Button, message } from 'antd';
 const { TextArea } = Input;
 
 const CrossLine = () => {
@@ -15,7 +15,6 @@ const CrossLine = () => {
     useEffect( () => {
         const getData = async () => {
             const { data } = await axios.get('https://script.google.com/macros/s/AKfycbwOdYkhXblo8IqLeGwjC_7dEGsYvmE35lhsOABjUkfowUiD9gFMw4UeOKbiSDEDiYwX/exec');
-            console.log(data);
             if(data.status==='success'){
                 setCode(data.data[0].code);
                 setMetadata({
@@ -34,6 +33,8 @@ const CrossLine = () => {
         var copyText = codeRef.current.resizableTextArea.textArea;
         copyText.select();
         document.execCommand("Copy");
+        message.destroy();
+        message.success('잘 복사되었습니다');
     };
 
     return (
