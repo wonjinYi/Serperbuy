@@ -38,7 +38,8 @@ const Nav = styled.div`
     display : flex;
     align-items : center;
 
-    min-height : 48px;
+    padding-top : 12px;
+    padding-bottom : 12px;
 
     padding-left : 64px;
     padding-right : 64px;
