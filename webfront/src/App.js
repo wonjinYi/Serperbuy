@@ -2,6 +2,7 @@
 import { HashRouter, Route, Link } from "react-router-dom";
 
 import styled from 'styled-components';
+import Canvasif from "./Canvasif";
 import CrossLine from "./CrossLine";
 
 import Home from './Home';
@@ -16,11 +17,13 @@ function App() {
                     <Link to="/"><Logo /></Link>
                     <Link to="/RepGen"><NavItem>RepGen</NavItem></Link>
                     <Link to="/CrossLine"><NavItem>CrossLine</NavItem></Link>
+                    <Link to="/Canvasif"><NavItem>Canvasif</NavItem></Link>
                     <Link to="/SuperFilter"><NavItem>SuperFilter</NavItem></Link>
                 </Nav>
                 <Route path="/" exact={true} component={Home} />
                 <Route path="/RepGen" component={RepGen} />
                 <Route path="/CrossLine" component={CrossLine} />
+                <Route path="/Canvasif" component={Canvasif} />
                 <Route path="/SuperFilter" component={SuperFilter} />
             </HashRouter>
         </AppWrap>
